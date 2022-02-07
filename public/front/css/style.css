@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Qwigley&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+
+.heroSianture{
+    background: linear-gradient(180deg, rgba(255,255,255,1) 35%, rgba(255,237,221,0.69) 69%);
+}
+
+.introSianture{
+    background: linear-gradient(180deg, rgba(255,255,255,1) 35%, rgba(255,211,238,0.69) 69%);
+}
+
+.cultureSianture{
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(218, 255, 211, 0.69) 100%);
+}
+
+.cultureListSianture{
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(225, 250, 255, 0.69) 100%);
+    padding-bottom: 70px;
+}
+
+.profilSianture,.contactSianture{
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(184, 184, 184, 0.69) 100%);
+    padding-bottom: 70px;
+}
+
+
+
+
+.judulCulture{
+    font-family: "Qwigley";
+    font-size: 50px;
+}
+
+button a{
+    text-decoration: none;
+    color: white;
+}
+
+button a:hover{
+    color: rgba(255,255,255,0.8);
+}
+
+.navbar-brand{
+    font-weight: 700;
+}
+
+.col img .img1{
+    height: 300px;
+}
+
+.footer {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    }
