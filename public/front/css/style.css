@@ -17,10 +17,13 @@
 
 .cultureSianture{
     background: linear-gradient(180deg, #FFFFFF 0%, rgba(218, 255, 211, 0.69) 100%);
+    min-height: 700px;
+    padding-bottom: 70px;
 }
 
 .cultureListSianture{
     background: linear-gradient(180deg, #FFFFFF 0%, rgba(225, 250, 255, 0.69) 100%);
+    min-height: 700px;
     padding-bottom: 70px;
 }
 
@@ -28,6 +31,8 @@
     background: linear-gradient(180deg, #FFFFFF 0%, rgba(184, 184, 184, 0.69) 100%);
     padding-bottom: 70px;
 }
+
+
 
 
 
@@ -60,3 +65,29 @@ button a:hover{
     left: 0;
     bottom: 0;
     }
+.horizontal-line{
+    border-top: 4px solid #000;
+    width: 60%;
+}
+
+
+/* Media Query */
+@media (max-width: 575.98px) { 
+    .judul{
+        text-align: center;
+    }
+    .horizontal-line{
+        width: 100%;
+    }
+    .buttonJelajahi{
+        text-align: center;
+    }
+    .cultureListSianture{
+        min-height: 700px;
+    }
+    .profilSianture .row{
+        text-align: center;
+    }
+    
+}
+

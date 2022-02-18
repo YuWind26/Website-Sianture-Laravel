@@ -52,6 +52,13 @@
     <!-- Javascript -->
     @include('sb-admin/javascript')
 
+    {{-- ck editor --}}
+    @yield('ck-editor')
+
+    {{-- Sweet Alert --}}
+    @include('sweetalert::alert')
+
+
 </body>
 
 </html>

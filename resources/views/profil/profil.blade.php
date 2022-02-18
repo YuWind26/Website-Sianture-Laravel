@@ -2,11 +2,11 @@
 
 @section('content')
 <section class="profilSianture">
-  <img src="front/image/imgProfil2.png"   alt="imageIntro4">
+  <img src="front/image/imgProfil2.png" class="img-fluid"  alt="imageIntro4">
   <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" style="margin-top:-400px">
       <div class="judulCulture col-12 justify-content-center">
-        <h1 style="font-size: 100px;text-align: center;">My Profil</h1>
+        <h1 class="text-center display-3 mb-4 fw-bold">My Profil</h1>
       </div>
     </div>
     <div class="row justify-content-center pb-5  text-center">
@@ -24,8 +24,8 @@
           <img src="front/image/user.png" alt="">
         </div>
         <div class="col">
-         <p>Nama : Hamdan Yuwafi</p>
-         <p>NIM    : 3.34.30.3.11</p> 
+         <p>Nama : Sulthan Naufalirazhan Riyadi</p>
+         <p>NIM : 3.34.20.3.23</p> 
         </div>
       </div>
     </div>
@@ -35,8 +35,8 @@
           <img src="front/image/user.png" alt="">
         </div>
         <div class="col">
-         <p>Nama : Hamdan Yuwafi</p>
-         <p>NIM    : 3.34.30.3.11</p> 
+         <p>Nama : Muhammad Arif Prasetyo</p>
+         <p>NIM    : 3.34.20.3.15</p> 
         </div>
       </div>
       <div class="col-md-5">
@@ -44,8 +44,8 @@
           <img src="front/image/user.png" alt="">
         </div>
         <div class="col">
-         <p>Nama : Hamdan Yuwafi</p>
-         <p>NIM    : 3.34.30.3.11</p> 
+         <p>Nama : Vanessa Sisilia Dewi</p>
+         <p>NIM    : 3.34.20.3.24</p> 
         </div>
       </div>
     </div>
@@ -55,8 +55,8 @@
           <img src="front/image/user.png" alt="">
         </div>
         <div class="col">
-         <p>Nama : Hamdan Yuwafi</p>
-         <p>NIM    : 3.34.30.3.11</p> 
+         <p>Nama : Riyagung Nuryusufa Tranggono A. P</p>
+         <p>NIM    : 3.34.20.3.21</p> 
         </div>
       </div>
       <div class="col-md-5">
@@ -64,8 +64,8 @@
           <img src="front/image/user.png" alt="">
         </div>
         <div class="col">
-         <p>Nama : Hamdan Yuwafi</p>
-         <p>NIM    : 3.34.30.3.11</p> 
+         <p>Nama : Yohana Putri Kusumastuti</p>
+         <p>NIM    : 3.34.20.3.26</p> 
         </div>
       </div>
     </div>

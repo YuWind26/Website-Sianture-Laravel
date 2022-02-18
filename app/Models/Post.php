@@ -12,18 +12,16 @@ class Post extends Model
 
     protected $table = 'post';
 
-    protected $fillable = ['judul','konten','sampul','slug','id_kategori'];
+    protected $fillable = ['judul', 'konten', 'sampul', 'slug', 'id_kategori'];
 
     public function kategori()
     {
-        return $this->belongsTo(kategori::class,'id_kategori');
+        return $this->belongsTo(kategori::class, 'id_kategori');
     }
 
-    
+
     public function tag()
     {
         return $this->belongsToMany(Tag::class, 'post_tag', 'id_post', 'id_tag');
     }
-
-    
 }

@@ -2,6 +2,12 @@
 
 @section('title','Sianture-Kategori')
 
+@section('kategori','active')
+
+@section('main','show')
+
+@section('main-active','active')
+
 @section('content')
      <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800">Kategori</h1>
@@ -17,7 +23,7 @@
                 <small class="text-danger">{{ $message }}</small>
             @enderror
         </div>
-        <button type="submit" class="btn btn-primary btn-sm">Edit</button>
+        <button type="submit" class="btn btn-success btn-sm">Edit</button>
         <a href="/kategori" class="btn btn-secondary btn-sm">Kembali</a>
     </form>
 

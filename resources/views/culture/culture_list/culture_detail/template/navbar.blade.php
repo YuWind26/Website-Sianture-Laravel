@@ -18,6 +18,20 @@
             <li class="nav-item px-3">
                 <a class="nav-link fs-6" aria-current="page" href="/contact">CONTACT</a>
             </li>
+            @auth
+
+                <li class="nav-item px-3">
+                    <a class="nav-link fs-6" aria-current="page" href="/dashboard">ADMIN</a>
+                </li>
+            @else
+                <li class="nav-item px-3">
+                    <a class="nav-link fs-6" aria-current="page" href="/login">LOGIN</a>
+                </li>
+
+                {{-- <li class="nav-item px-3">
+                    <a class="nav-link fs-6" aria-current="page" href="/register">REGISTER</a>
+                </li> --}}
+            @endauth
         </ul>
     </div>
     </div>

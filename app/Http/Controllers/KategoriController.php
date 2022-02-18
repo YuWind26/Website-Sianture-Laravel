@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class KategoriController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -15,8 +18,8 @@ class KategoriController extends Controller
      */
     public function index()
     {
-        $kategori = Kategori::select('id','nama','slug')->latest()->simplePaginate(5);
-        return view('admin/kategori/index',compact('kategori'));
+        $kategori = Kategori::select('id', 'nama', 'slug')->latest()->simplePaginate(5);
+        return view('admin/kategori/index', compact('kategori'));
     }
 
     /**
@@ -43,17 +46,19 @@ class KategoriController extends Controller
 
 
         Kategori::create([
-            'nama'=>Str::title($request->nama),
-            'slug'=>Str::slug($request->nama, '-')
+            'nama' => Str::title($request->nama),
+            'slug' => Str::slug($request->nama, '-')
         ]);
 
-        $request->session()->flash('sukses', '
-        <div class="alert alert-success" role="alert">
-            Data Berhasil ditambahkan
-        </div>
-        ');
-        return redirect('/kategori');
+        // $request->session()->flash('sukses', '
+        // <div class="alert alert-success" role="alert">
+        //     Data Berhasil ditambahkan
+        // </div>
+        // ');
 
+        Alert::success('sukses', 'Data Berhasil Dibuat');
+
+        return redirect('/kategori');
     }
 
     /**
@@ -75,8 +80,8 @@ class KategoriController extends Controller
      */
     public function edit($id)
     {
-        $kategori = Kategori::select('id','nama')-> whereId($id)->first();
-        return view('admin/kategori/edit',compact('kategori'));
+        $kategori = Kategori::select('id', 'nama')->whereId($id)->first();
+        return view('admin/kategori/edit', compact('kategori'));
     }
 
     /**
@@ -93,16 +98,19 @@ class KategoriController extends Controller
         ]);
 
 
-        Kategori::whereId($id)->create([
-            'nama'=>Str::title($request->nama),
-            'slug'=>Str::slug($request->nama, '-')
+        Kategori::whereId($id)->update([
+            'nama' => Str::title($request->nama),
+            'slug' => Str::slug($request->nama, '-')
         ]);
 
-        $request->session()->flash('sukses', '
-        <div class="alert alert-success" role="alert">
-            Data Berhasil diupdate
-        </div>
-        ');
+        // $request->session()->flash('sukses', '
+        // <div class="alert alert-success" role="alert">
+        //     Data Berhasil diupdate
+        // </div>
+        // ');
+
+        Alert::success('sukses', 'Data Berhasil diupdate');
+
         return redirect('/kategori');
     }
 
@@ -114,15 +122,38 @@ class KategoriController extends Controller
      */
     public function destroy($id)
     {
-        Kategori::whereId($id)->delete();
+        // Kategori::whereId($id)->delete();
 
-        request()->session()->flash('sukses', '
-        <div class="alert alert-success" role="alert">
-            Data Berhasil dihapus
-        </div>
-        ');
+        // request()->session()->flash('sukses', '
+        // <div class="alert alert-success" role="alert">
+        //     Data Berhasil dihapus
+        // </div>
+        // ');
+        // return redirect('/kategori');
+    }
+
+    public function konfirmasi($id)
+    {
+        // example:
+        alert()->question('Yakin menghapus?', 'Anda tidak bisa mengembalikan data ini lagi jika anda menghapus')
+            ->showConfirmButton('<a href="/kategori/' . $id . '/delete" class="text-white" style="text-decoration: none">Delete</a>', '#3085d6')->toHtml()
+            ->showCancelButton('Batal', '#aaa')->reverseButtons();
+
         return redirect('/kategori');
+    }
 
+    public function delete($id)
+    {
+        $kategori = Kategori::select('id')->whereId($id)->firstOrFail();
+        $kategori->delete();
 
+        // request()->session()->flash('sukses', '
+        // <div class="alert alert-success" role="alert">
+        //     Data Berhasil dihapus
+        // </div>
+        // ');
+
+        Alert::success('sukses', 'Data Berhasil dihapus');
+        return redirect('/kategori');
     }
 }

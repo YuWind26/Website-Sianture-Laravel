@@ -2,9 +2,15 @@
 
 @section('title','Sianture-Post')
 
+@section('post','active')
+
+@section('main','show')
+
+@section('main-active','active')
+
 @section('content')
      <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">post</h1>
+    <h1 class="h3 mb-4 text-gray-800">Postingan</h1>
 
     <!-- Form -->
     <form action="/post/{{$post->id}}" method="POST" enctype="multipart/form-data">
@@ -50,7 +56,7 @@
             </div>
         </div>
 
-        <div class="form-group">
+        {{-- <div class="form-group">
             <label for="tag">Tag</label>
             <select multiple class="form-control" name="tag" id="tag[]">
                 @foreach ($tag as $row)
@@ -66,18 +72,30 @@
             @error('tag')
                 <small class="text-danger">{{ $message }}</small>
             @enderror
-        </div>
+        </div> --}}
 
         <div class="form-group">
-            <label for="konten">Konten</label>
-            <textarea class="form-control" id="konten" rows="10" name="konten">{{old('konten') ? old('konten') : $post->konten}}</textarea>
+            <label for="editor">Konten</label>
+            <textarea class="form-control" id="editor" rows="10" name="konten">{{old('konten') ? old('konten') : $post->konten}}</textarea>
             @error('konten')
                 <small class="text-danger">{{ $message }}</small>
             @enderror
         </div>
-        <button type="submit" class="btn btn-primary btn-sm">Edit</button>
+        <button type="submit" class="btn btn-success btn-sm">Edit</button>
         <a href="/post" class="btn btn-secondary btn-sm">Kembali</a>
     </form>
 
 
 @endsection 
+
+@section('ck-editor')
+    <script src="https://cdn.ckeditor.com/ckeditor5/32.0.0/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
+    
+@endsection
